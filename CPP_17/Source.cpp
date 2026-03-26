@@ -7,7 +7,7 @@ using namespace std;
 
 namespace Color {
 
-	static auto GetColorsCode(int a, int b, int c) {
+	static auto GetColorsCode(int a, int b, int c) -> void {
 
 		if constexpr (sizeof(a) > 0) {
 			auto [x, y, z] = std::make_tuple(a, b, c);
@@ -17,7 +17,7 @@ namespace Color {
 		}
 	}
 
-	static void HexColor(int r, int g, int b) {
+	static auto HexColor(int r, int g, int b) -> void {
 
 		if constexpr (sizeof(r) > 0) {
 
@@ -30,7 +30,7 @@ namespace Color {
 	}
 
 
-	static int random_rgb(int color) {
+	static auto random_rgb(int color) -> int {
 
 		if constexpr (sizeof(color) > 0) {
 			return rand() % color + 1;
@@ -47,7 +47,7 @@ int Blue = Color::random_rgb(254);
 
 bool isColorEnabled = false;
 
-int main() {
+auto main() -> int {
 
 
 	while (!isColorEnabled) {
